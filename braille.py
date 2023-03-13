@@ -1,3 +1,4 @@
+word= input('What would you like translated to Braille?')
 def convert(letter):
     alpha=letter.lower()
     braille={
@@ -26,7 +27,8 @@ def convert(letter):
         'w':'010111',
         'x':'101101',
         'y':'101111',
-        'z':'101011'
+        'z':'101011',
+        ' ':'000001'
         }
     return(braille[alpha])
 def solution(s):
@@ -34,7 +36,7 @@ def solution(s):
     answer=''
     for letter in s:
         if letter.isupper():
-            answer=answer+'000001'+convert(letter)
-        else:
-            answer+=convert(letter)
+            answer+='000001'
+        answer+=convert(letter)
     print(answer)
+solution(word)
